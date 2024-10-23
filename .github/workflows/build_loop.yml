@@ -283,8 +283,11 @@ jobs:
           # Remove the "#" sign from the beginning of the line below to activate:
           #curl https://github.com/loopnlearn/Loop/commit/d206432b024279ef710df462b20bd464cd9682d4.patch | git apply --directory=Loop -v --whitespace=fix
 
-          # Loop: sirenjulie-patch-1: Endring av karbotider ver 3.4
-          curl https://github.com/sirenjulie/Loop/commit/da0c15fd62846670c258ff1c3182d3694665a52e.patch | git apply -v --directory=Loop -v --whitespace=fix
+          # Loop: sirenjulie-patch-2: Endring av karbotider
+          curl https://github.com/sirenjulie/Loop/commit/30d76c992e2de212b6208a0df4f64b585b841d3e.patch | git apply -v --directory=Loop -v --whitespace=fix
+
+          # Loop: sirenjulie-patch-3: Endring av BS-grense for max GBPA (162 mg/dl)
+          curl https://github.com/sirenjulie/Loop/commit/777a9ed03b5abeec8bcf04c3432ff3c8e58784e8.patch | git apply -v --directory=Loop -v --whitespace=fix
 
           # Submodule LoopKit patches:
           # General template for customizing submodule LoopKit 
