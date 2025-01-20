@@ -285,9 +285,6 @@ jobs:
 
           # Loop: sirenjulie-patch-3: Endring av BS-grense for max GBPA (162 mg/dl)
           curl https://github.com/sirenjulie/Loop/commit/777a9ed03b5abeec8bcf04c3432ff3c8e58784e8.patch | git apply -v --directory=Loop -v --whitespace=fix
-
-          # Loop: sirenjulie-patch-1: Endring av karbotider
-          curl https://github.com/sirenjulie/Loop/commit/b1b915920355e384aec945d949b256d79b95aedd.patch | git apply -v --directory=Loop -v --whitespace=fix
           
           # Submodule LoopKit patches:
           # General template for customizing submodule LoopKit 
