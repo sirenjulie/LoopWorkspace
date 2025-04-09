@@ -267,8 +267,9 @@ jobs:
           lnl_icon \
           meal_week \
           2002 \
-          basal_lock \ 
+          basal_lock \
           bolus_display \
+          negative_insulin \
           g7_scan
 
           # the final customization listed above CANNOT have a continuation character
