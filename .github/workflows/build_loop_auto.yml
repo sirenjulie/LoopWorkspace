@@ -212,6 +212,21 @@ jobs:
       - name: Customize Loop
         run: |
 
+          # The lines below add the customizations listed using the CustomizationSelect script
+          # The "\" is a continuation character 
+          #   the line following a "\" should not be blank
+          /bin/bash -c "$(curl -fsSL \
+          https://raw.githubusercontent.com/loopandlearn/lnl-scripts/main/CustomizationSelect.sh)" \
+          future_carbs_4h \
+          low_carb_limit \
+          override_sens \
+          now_line \
+          lnl_icon \
+          meal_week \
+          2002 \
+          basal_lock \
+          negative_insulin
+
           # LoopWorkspace patches
           # -applies any patches located in the LoopWorkspace/patches/ directory
           if $(ls ./patches/* &> /dev/null); then
@@ -223,10 +238,16 @@ jobs:
           # Remove the "#" sign from the beginning of the line below to activate:
           #curl https://github.com/loopnlearn/Loop/commit/d206432b024279ef710df462b20bd464cd9682d4.patch | git apply --directory=Loop -v --whitespace=fix
 
+          # Loop: sirenjulie-patch-3: Endring av BS-grense for max GBPA (162 mg/dl)
+          curl https://github.com/sirenjulie/Loop/commit/777a9ed03b5abeec8bcf04c3432ff3c8e58784e8.patch | git apply -v --directory=Loop -v --whitespace=fix
+
           # Submodule LoopKit patches:
           # General template for customizing submodule LoopKit 
           # Copy url from a GitHub commit or pull request and insert below, and remove the "#" sign from the beginning of the line to activate:
           #curl url_to_github_commit.patch | git apply --directory=LoopKit -v --whitespace=fix
+
+          # LoopKit: sirenjulie-patch-2: Endring av lyumjev-verdier ver 3.4
+          curl https://github.com/sirenjulie/LoopKit/commit/bca838ca222acec76801027fdc5f6d12f19edbb1.patch | git apply -v --directory=LoopKit -v --whitespace=fix
 
           # Submodule xxxxx patches:
 
